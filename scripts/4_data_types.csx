@@ -1,17 +1,17 @@
-        // declaring character
-        char a = 'G';
+// declaring character
+char a = 'G';
 
-        // Integer data type is generally
-        // used for numeric values
-        int i = 89;
+// Integer data type is generally
+// used for numeric values
+int i = 89;
 
-        short s = 56;
+short s = 56;
 
-        // this will give error as number
-        // is larger than short range
-        // short s1 = 87878787878;
+// this will give error as number
+// is larger than short range
+// short s1 = 87878787878;
 
-        // long uses Integer values which
+// long uses Integer values which
         // may signed or unsigned
         long l = 4564;
 
