@@ -119,3 +119,5 @@ Migrations/
 *.env
 .env.*
 
+bin/Debug/net8.0
+obj
