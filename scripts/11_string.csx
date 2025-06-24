@@ -10,3 +10,15 @@ string s = "Shahriar";
 
 Console.WriteLine(s);
 Console.WriteLine(s.Length);
+
+char[] arr = s.ToCharArray();
+
+Array.Reverse(arr);
+
+string s2 = new string(arr);
+
+if (s == s2) {
+  Console.WriteLine("Palindrome");
+} else {
+  Console.WriteLine("Not Palindrome");
+}
