@@ -22,3 +22,13 @@ if (s == s2) {
 } else {
   Console.WriteLine("Not Palindrome");
 }
+
+// array of string
+string[] aos = new string[20];
+
+for (int i = 0; i < 20; i++) {
+  aos[i] = "X" + i;
+}
+
+  Console.WriteLine(aos[10]);
+
