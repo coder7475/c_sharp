@@ -9,3 +9,4 @@ Console.WriteLine(str);
 string s = "Shahriar";
 
 Console.WriteLine(s);
+Console.WriteLine(s.Length);
