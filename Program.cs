@@ -10,6 +10,13 @@ class Student {
     this.name = name;
     this.age = age;
   }
+  public void SetName(string name) {
+    this.name = name;
+  }
+
+  public string GetName() {
+    return this.name;
+  }
 
   public void ShowInfo() {
     Console.WriteLine("Name: {0} Age: {1}", name, age);
@@ -21,6 +28,9 @@ class Program {
     Student student = new Student("Saif", 27);
 
 
+
+    student.SetName("Shahriar");
     student.ShowInfo();
+    Console.WriteLine(student.GetName());
   }
 }
