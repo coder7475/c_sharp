@@ -1,11 +1,26 @@
 ﻿using System;
 
-class Program {
-  public static int sum(int a, int b) {
-    return a + b;
+// OOP 
+// Student Management System
+class Student {
+  public string name;
+  public int age;
+  
+  public Student(string name, int age) {
+    this.name = name;
+    this.age = age;
   }
-  public static void Main() {
-    Console.WriteLine("Hello from c#!!");
-    Console.WriteLine("Sum of 2 + 4: {0}", sum(2, 4));
+
+  public void ShowInfo() {
+    Console.WriteLine("Name: {0} Age: {1}", name, age);
+  }
+}
+
+class Program {
+  public static void Main() {   
+    Student student = new Student("Saif", 27);
+
+
+    student.ShowInfo();
   }
 }
