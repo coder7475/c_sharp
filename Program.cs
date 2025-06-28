@@ -3,8 +3,8 @@
 // OOP 
 // Student Management System
 class Student {
-  public string name;
-  public int age;
+  private string name;
+  private int age;
   
   public Student(string name, int age) {
     this.name = name;
