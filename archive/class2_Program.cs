@@ -2,63 +2,60 @@
 
 // OOP 
 // Student Management System
-class Auth {
-  public bool IsAuthenticated() {
+class Authenticator {
+  public bool IsUserAuthenticated() {
     return false;
   }
 }
 
 class Student {
-  private string name;
-  private int age;
-  Auth auth = new Auth();
+  private string _name;
+  private int _age;
+  private Authenticator _authenticator = new Authenticator();
   
   public Student(string name, int age) {
-    this.name = name;
-    this.age = age;
+    _name = name;
+    _age = age;
   }
   public void SetName(string name) {
-    if (auth.IsAuthenticated()){   
-      this.name = name;
+    if (_authenticator.IsUserAuthenticated()){   
+      _name = name;
     }
     else
     {
-        Console.WriteLine("You are not Authenticated");
+        Console.WriteLine("You are not authenticated");
     }
   }
 
   public string GetName() {
-    return this.name;
+    return _name;
   }
 
-  public void ShowInfo() {
-    Console.WriteLine("Name: {0} Age: {1}", name, age);
-  }
-}
-
-// Inheritence
-class JIPCStudent : Student {
-  public JIPCStudent(string name, int age): base(name, age) {
-
-  }
-  public void GiveQuiz() {
-    Console.WriteLine("Give Quiz");
+  public void DisplayInfo() {
+    Console.WriteLine("Name: {0} Age: {1}", _name, _age);
   }
 }
 
-class Program2 {
-  public static void Main2() {   
+// Inheritance
+class JipcStudent : Student {
+  public JipcStudent(string name, int age): base(name, age) {
+
+  }
+  public void TakeQuiz() {
+    Console.WriteLine("Take Quiz");
+  }
+}
+
+class StudentManagementProgram {
+  public static void Student() {   
     Student student = new Student("Saif", 27);
 
-
-
     student.SetName("Shahriar");
-    student.ShowInfo();
+    student.DisplayInfo();
     Console.WriteLine(student.GetName());
 
-
-    JIPCStudent jipcStudent = new JIPCStudent("John", 20);
-    jipcStudent.ShowInfo();
-    jipcStudent.GiveQuiz();
+    JipcStudent jipcStudent = new JipcStudent("John", 20);
+    jipcStudent.DisplayInfo();
+    jipcStudent.TakeQuiz();
   }
 }
