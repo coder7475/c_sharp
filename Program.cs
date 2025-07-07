@@ -1,64 +1,34 @@
 ﻿using System;
 
-// OOP 
-// Student Management System
-class Auth {
-  public bool IsAuthenticated() {
-    return false;
-  }
-}
+public abstract class Payment {
+  public int Amount { get; set;}
+  public string TransactionId { get; set; }
 
-class Student {
-  private string name;
-  private int age;
-  Auth auth = new Auth();
-  
-  public Student(string name, int age) {
-    this.name = name;
-    this.age = age;
-  }
-  public void SetName(string name) {
-    if (auth.IsAuthenticated()){   
-      this.name = name;
-    }
-    else
-    {
-        Console.WriteLine("You are not Authenticated");
-    }
-  }
+  public abstract void ProcessPayment();
 
-  public string GetName() {
-    return this.name;
-  }
+  public abstract void ValidatePayment();
 
   public void ShowInfo() {
-    Console.WriteLine("Name: {0} Age: {1}", name, age);
+    Console.WriteLine("Amount: {0}", Amount);
+    Console.WriteLine("TransactionId: {0}", TransactionId);
   }
 }
 
-// Inheritence
-class JIPCStudent : Student {
-  public JIPCStudent(string name, int age): base(name, age) {
+// Inhereit Payment
+public class CreditCardPayment: Payment {
+  public string CardNumber { get; set; }
 
-  }
-  public void GiveQuiz() {
-    Console.WriteLine("Give Quiz");
-  }
+    public override void ProcessPayment() {
+      Console.WriteLine("Processing Credit Card Payment...");
+    }
+
+    public override void ValidatePayment() {
+      Console.WriteLine("Validating Credit Card Payment...");
+    }
 }
 
 class Program {
   public static void Main() {   
-    Student student = new Student("Saif", 27);
-
-
-
-    student.SetName("Shahriar");
-    student.ShowInfo();
-    Console.WriteLine(student.GetName());
-
-
-    JIPCStudent jipcStudent = new JIPCStudent("John", 20);
-    jipcStudent.ShowInfo();
-    jipcStudent.GiveQuiz();
+    Console.WriteLine("Hello Class 3!");
   }
 }
